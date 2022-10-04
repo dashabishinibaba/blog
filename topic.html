@@ -6,7 +6,7 @@
         <link rel="icon" href="./favicon.ico">
         <script src="./info.js"></script>
         <script>
-document.title = blog_title + " - 主页";
+document.title = blog_title + " - 文章";
         </script>
         <script>
 var sm;
@@ -41,7 +41,7 @@ function main_js(){
         if (isNaN(idi)){
             var innetext = "<p>一共有" + String(sm) + "篇文章</p>";
             for (var i=0; i < sm; i++){
-                innetext = innetext + '<a href="./topic.html?id=' + String(i + 1) + '">第' + String(i+1) + '篇文章</a><br>';
+                innetext = innetext + '<a href="./topic.html?id=' + String(i + 1) + '">' + json["data"][i]["name"] + '</a><br>';
             }
             content.innerHTML = innetext;
             
@@ -78,7 +78,7 @@ var haha = function(data){
         <script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
-        <span id="title">刘镕硕的博客</span> | <span><a href="./">主页</a></span> | <span><a href="./topic.html">文章</a></span>
+        <span id="title">刘镕硕的博客</span> | <span><a href="/">主页</a></span> | <span><a href="/topic.html">文章</a></span>
         <hr width="100%" align="left">
         <div id="main"></div>
         <script>
